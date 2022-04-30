@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionColegio.WebApi", "Ge
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionColegio", "GestionColegio\GestionColegio.csproj", "{E98FC903-B844-49E4-9F9D-AE913C3114E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionColegio.Tests", "GestionColegio.Tests\GestionColegio.Tests.csproj", "{BF239EAD-3B36-4A98-BF3E-7D8341D6F759}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionColegio.ObjectMapper.AutoMapper", "GestionColegio.ObjectMapper.AutoMapper\GestionColegio.ObjectMapper.AutoMapper.csproj", "{EA018337-BE92-4CE4-BBC1-820FCE8BBF9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E98FC903-B844-49E4-9F9D-AE913C3114E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E98FC903-B844-49E4-9F9D-AE913C3114E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E98FC903-B844-49E4-9F9D-AE913C3114E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF239EAD-3B36-4A98-BF3E-7D8341D6F759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF239EAD-3B36-4A98-BF3E-7D8341D6F759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF239EAD-3B36-4A98-BF3E-7D8341D6F759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF239EAD-3B36-4A98-BF3E-7D8341D6F759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA018337-BE92-4CE4-BBC1-820FCE8BBF9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA018337-BE92-4CE4-BBC1-820FCE8BBF9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA018337-BE92-4CE4-BBC1-820FCE8BBF9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA018337-BE92-4CE4-BBC1-820FCE8BBF9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
