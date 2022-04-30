@@ -1,7 +1,12 @@
+using GestionColegio.Application;
+using GestionColegio.Domain.Interfaces;
+using GestionColegio.Persistence.EntityFramework.Context;
+using GestionColegio.Persistence.EntityFramework.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,7 +36,16 @@ namespace GestionColegio.WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = $"Gestion Colegio v1", Version = "v1" });
             });
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(); ;
+
+            services.AddDbContext<GestionColegioDbContext>
+                (opts => opts.UseSqlServer(Configuration["ConnectionStrings:GestionColegioDB"]));
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.ConfigureServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
