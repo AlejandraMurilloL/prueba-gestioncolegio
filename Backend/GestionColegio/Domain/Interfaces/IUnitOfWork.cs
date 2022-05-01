@@ -7,6 +7,7 @@ namespace GestionColegio.Domain.Interfaces
     {
         IAsignaturaRepository AsignaturaRepository { get; }
         IProfesorRepository ProfesorRepository { get; }
+        IEstudianteRepository EstudianteRepository { get; }
         Task<int> CompleteAsync();
         Task<int> CompleteAsync(CancellationToken cancellationToken);
     }
