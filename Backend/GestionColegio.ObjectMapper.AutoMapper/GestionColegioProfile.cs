@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using GestionColegio.Application.Asignatura.Dtos;
+using GestionColegio.Application.Asignaturas.Dtos;
+using GestionColegio.Application.Profesores.Dtos;
 using GestionColegio.Domain.Entities;
 using System;
 
@@ -10,6 +11,7 @@ namespace GestionColegio.ObjectMapper.AutoMapper
         public GestionColegioProfile()
         {
             CreateMap<Asignatura, AsignaturaDto>();
+            CreateMap<Profesor, ProfesorDto>();
         }
     }
 }

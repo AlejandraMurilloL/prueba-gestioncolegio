@@ -1,4 +1,5 @@
-﻿using GestionColegio.Application.Asignatura.Services;
+﻿using GestionColegio.Application.Asignaturas.Services;
+using GestionColegio.Application.Profesores.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GestionColegio.Application
@@ -8,6 +9,8 @@ namespace GestionColegio.Application
         public static IServiceCollection ConfigureServices(this IServiceCollection services)
         {
             services.AddScoped<IAsignaturaQueryService, AsignaturaQueryService>();
+            services.AddScoped<IProfesorQueryService, ProfesorQueryService>();
+            services.AddScoped<IProfesorCommandService, ProfesorCommandService>();
 
             return services;
         }

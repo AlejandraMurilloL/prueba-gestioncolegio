@@ -1,10 +1,8 @@
-﻿using GestionColegio.Application.Asignatura.Dtos;
-using System;
+﻿using GestionColegio.Application.Asignaturas.Dtos;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionColegio.Application.Asignatura.Services
+namespace GestionColegio.Application.Asignaturas.Services
 {
     public interface IAsignaturaQueryService
     {

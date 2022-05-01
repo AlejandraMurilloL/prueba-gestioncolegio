@@ -1,5 +1,5 @@
-﻿using GestionColegio.Application.Asignatura.Dtos;
-using GestionColegio.Application.Asignatura.Services;
+﻿using GestionColegio.Application.Asignaturas.Dtos;
+using GestionColegio.Application.Asignaturas.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;

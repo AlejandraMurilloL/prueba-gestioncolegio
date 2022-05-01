@@ -13,6 +13,7 @@ namespace GestionColegio.Persistence.EntityFramework.Repositories
         private readonly GestionColegioDbContext _context;
 
         public IAsignaturaRepository AsignaturaRepository { get; private set; }
+        public IProfesorRepository ProfesorRepository { get; private set; }
 
 
         public UnitOfWork(GestionColegioDbContext context)
@@ -20,6 +21,7 @@ namespace GestionColegio.Persistence.EntityFramework.Repositories
             _context = context;
 
             AsignaturaRepository = new AsignaturaRepository(_context);
+            ProfesorRepository = new ProfesorRepository(_context);
         }
 
         public async Task<int> CompleteAsync()

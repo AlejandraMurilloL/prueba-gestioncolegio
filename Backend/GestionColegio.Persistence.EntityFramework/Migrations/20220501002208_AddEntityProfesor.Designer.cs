@@ -4,14 +4,16 @@ using GestionColegio.Persistence.EntityFramework.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GestionColegio.Persistence.EntityFramework.Migrations
 {
     [DbContext(typeof(GestionColegioDbContext))]
-    partial class GestionColegioDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220501002208_AddEntityProfesor")]
+    partial class AddEntityProfesor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +40,7 @@ namespace GestionColegio.Persistence.EntityFramework.Migrations
                     b.ToTable("Asignaturas");
                 });
 
-            modelBuilder.Entity("GestionColegio.Domain.Entities.Usuario", b =>
+            modelBuilder.Entity("GestionColegio.Domain.Entities.Profesor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,10 +52,6 @@ namespace GestionColegio.Persistence.EntityFramework.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Direccion")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Edad")
@@ -70,16 +68,7 @@ namespace GestionColegio.Persistence.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuarios");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Usuario");
-                });
-
-            modelBuilder.Entity("GestionColegio.Domain.Entities.Profesor", b =>
-                {
-                    b.HasBaseType("GestionColegio.Domain.Entities.Usuario");
-
-                    b.HasDiscriminator().HasValue("Profesor");
+                    b.ToTable("Profesores");
                 });
 #pragma warning restore 612, 618
         }
