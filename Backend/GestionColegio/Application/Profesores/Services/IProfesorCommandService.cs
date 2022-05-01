@@ -8,5 +8,6 @@ namespace GestionColegio.Application.Profesores.Services
         Task Save(ProfesorDto profesor);
         Task Update(ProfesorDto dto, int id);
         Task Delete(int id);
+        Task AddAsignatura(int profesorId, ProfesorAsignaturaDto dto);
     }
 }

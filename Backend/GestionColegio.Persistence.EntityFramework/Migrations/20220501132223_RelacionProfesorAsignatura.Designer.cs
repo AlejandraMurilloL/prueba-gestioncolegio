@@ -4,14 +4,16 @@ using GestionColegio.Persistence.EntityFramework.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GestionColegio.Persistence.EntityFramework.Migrations
 {
     [DbContext(typeof(GestionColegioDbContext))]
-    partial class GestionColegioDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220501132223_RelacionProfesorAsignatura")]
+    partial class RelacionProfesorAsignatura
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

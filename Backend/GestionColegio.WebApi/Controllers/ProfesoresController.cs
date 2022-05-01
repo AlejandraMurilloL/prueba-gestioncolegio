@@ -51,5 +51,12 @@ namespace GestionColegio.WebApi.Controllers
         {
             await CommandService.Delete(id);
         }
+
+        [HttpPost]
+        [Route("{id}/Asignaturas")]
+        public async Task AddAsignatura(int id, [FromBody] ProfesorAsignaturaDto dto)
+        {
+            await CommandService.AddAsignatura(id, dto);
+        }
     }
 }
