@@ -1,8 +1,8 @@
-﻿using GestionColegio.Application.Profesor.Dtos;
+﻿using GestionColegio.Application.Profesores.Dtos;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GestionColegio.Application.Profesor.Services
+namespace GestionColegio.Application.Profesores.Services
 {
     public interface IProfesorQueryService
     {

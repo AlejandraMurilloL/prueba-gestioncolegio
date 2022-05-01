@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using GestionColegio.Application.Asignatura.Dtos;
+using GestionColegio.Application.Asignaturas.Dtos;
 using GestionColegio.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GestionColegio.Application.Asignatura.Services
+namespace GestionColegio.Application.Asignaturas.Services
 {
     public class AsignaturaQueryService : IAsignaturaQueryService
     {

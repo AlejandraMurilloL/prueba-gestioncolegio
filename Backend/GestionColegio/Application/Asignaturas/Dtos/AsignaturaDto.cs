@@ -1,4 +1,4 @@
-﻿namespace GestionColegio.Application.Asignatura.Dtos
+﻿namespace GestionColegio.Application.Asignaturas.Dtos
 {
     public class AsignaturaDto 
     {

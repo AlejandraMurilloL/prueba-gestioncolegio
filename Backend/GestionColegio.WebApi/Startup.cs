@@ -1,21 +1,17 @@
 using GestionColegio.Application;
 using GestionColegio.Domain.Interfaces;
+using GestionColegio.ObjectMapper.AutoMapper;
 using GestionColegio.Persistence.EntityFramework.Context;
 using GestionColegio.Persistence.EntityFramework.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace GestionColegio.WebApi
 {
@@ -42,6 +38,7 @@ namespace GestionColegio.WebApi
                 (opts => opts.UseSqlServer(Configuration["ConnectionStrings:GestionColegioDB"]));
 
             services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(new List<Assembly>() { typeof(GestionColegioProfile).Assembly });
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

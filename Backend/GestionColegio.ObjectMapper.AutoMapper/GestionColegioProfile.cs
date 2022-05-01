@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using GestionColegio.Application.Asignatura.Dtos;
-using GestionColegio.Application.Profesor.Dtos;
+using GestionColegio.Application.Asignaturas.Dtos;
+using GestionColegio.Application.Profesores.Dtos;
 using GestionColegio.Domain.Entities;
 using System;
 

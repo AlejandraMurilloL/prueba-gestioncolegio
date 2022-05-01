@@ -1,10 +1,7 @@
-﻿using GestionColegio.Application.Profesor.Dtos;
-using GestionColegio.Application.Profesor.Services;
-using Microsoft.AspNetCore.Http;
+﻿using GestionColegio.Application.Profesores.Dtos;
+using GestionColegio.Application.Profesores.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GestionColegio.WebApi.Controllers
@@ -14,10 +11,12 @@ namespace GestionColegio.WebApi.Controllers
     public class ProfesoresController : ControllerBase
     {
         public IProfesorQueryService QueryService { get; set; }
+        public IProfesorCommandService CommandService { get; set; }
 
-        public ProfesoresController(IProfesorQueryService queryService)
+        public ProfesoresController(IProfesorQueryService queryService, IProfesorCommandService commandService)
         {
             QueryService = queryService;
+            CommandService = commandService;
         }
 
         [HttpGet]
@@ -28,10 +27,29 @@ namespace GestionColegio.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("")]
         public async Task<IEnumerable<ProfesorDto>> GetAll()
         {
             return await QueryService.GetAll();
+        }
+
+        [HttpPost]
+        public async Task Add([FromBody]ProfesorDto profesor)
+        {
+            await CommandService.Save(profesor);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task Update(int id, [FromBody] ProfesorDto profesor)
+        {
+            await CommandService.Update(profesor, id);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task Delete(int id)
+        {
+            await CommandService.Delete(id);
         }
     }
 }

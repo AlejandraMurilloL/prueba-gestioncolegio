@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GestionColegio.Domain.Entities
+﻿namespace GestionColegio.Domain.Entities
 {
     public class Profesor : Usuario
     {

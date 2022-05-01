@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GestionColegio.ObjectMapper.AutoMapper\GestionColegio.ObjectMapper.AutoMapper.csproj" />
     <ProjectReference Include="..\GestionColegio.Persistence.EntityFramework\GestionColegio.Persistence.EntityFramework.csproj" />
   </ItemGroup>
 
