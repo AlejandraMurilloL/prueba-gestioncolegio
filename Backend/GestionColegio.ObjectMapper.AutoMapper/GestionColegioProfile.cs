@@ -11,6 +11,7 @@ namespace GestionColegio.ObjectMapper.AutoMapper
         public GestionColegioProfile()
         {
             CreateMap<Asignatura, AsignaturaDto>();
+            CreateMap<AsignaturaDto, Asignatura>();
             CreateMap<Profesor, ProfesorDto>();
         }
     }
