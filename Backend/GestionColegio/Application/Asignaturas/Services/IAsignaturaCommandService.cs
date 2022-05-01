@@ -5,7 +5,7 @@ namespace GestionColegio.Application.Asignaturas.Services
 {
     public interface IAsignaturaCommandService
     {
-        Task Save(AsignaturaDto profesor);
+        Task Save(AsignaturaDto dto);
         Task Update(AsignaturaDto dto, int id);
         Task Delete(int id);
     }

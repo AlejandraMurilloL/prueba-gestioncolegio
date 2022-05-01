@@ -10,7 +10,8 @@ namespace GestionColegio.Persistence.EntityFramework.Context
     public class GestionColegioDbContext : DbContext
     {
         public virtual DbSet<Asignatura> Asignaturas { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Profesor> Profesores { get; set; }
+        public virtual DbSet<Estudiante> Estudiantes { get; set; }
 
         public GestionColegioDbContext
         (DbContextOptions<GestionColegioDbContext> dbContextOptions)
