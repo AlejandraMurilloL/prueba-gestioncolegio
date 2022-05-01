@@ -7,5 +7,6 @@ namespace GestionColegio.Application.Asignaturas.Services
     public interface IAsignaturaQueryService
     {
         Task<IEnumerable<AsignaturaDto>> GetAll();
+        Task<AsignaturaDto> GetById(int id);
     }
 }

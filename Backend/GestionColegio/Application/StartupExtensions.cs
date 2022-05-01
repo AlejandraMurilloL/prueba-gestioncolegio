@@ -9,6 +9,7 @@ namespace GestionColegio.Application
         public static IServiceCollection ConfigureServices(this IServiceCollection services)
         {
             services.AddScoped<IAsignaturaQueryService, AsignaturaQueryService>();
+            services.AddScoped<IAsignaturaCommandService, AsignaturaCommandService>();
             services.AddScoped<IProfesorQueryService, ProfesorQueryService>();
             services.AddScoped<IProfesorCommandService, ProfesorCommandService>();
 

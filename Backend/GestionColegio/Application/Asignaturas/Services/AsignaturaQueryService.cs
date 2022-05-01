@@ -24,5 +24,12 @@ namespace GestionColegio.Application.Asignaturas.Services
 
             return _mapper.Map<IEnumerable<AsignaturaDto>>(asignaturas);
         }
+
+        public async Task<AsignaturaDto> GetById(int id)
+        {
+            var profesor = await _unitOfWork.AsignaturaRepository.GetByIdAsync(id).ConfigureAwait(false);
+
+            return _mapper.Map<AsignaturaDto>(profesor);
+        }
     }
 }
