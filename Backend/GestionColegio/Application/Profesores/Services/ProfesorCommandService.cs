@@ -2,6 +2,7 @@
 using GestionColegio.Application.Profesores.Dtos;
 using GestionColegio.Domain.Entities;
 using GestionColegio.Domain.Interfaces;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace GestionColegio.Application.Profesores.Services
@@ -47,6 +48,26 @@ namespace GestionColegio.Application.Profesores.Services
                         GetByIdAsync(id).ConfigureAwait(false);
             
             _unitOfWork.ProfesorRepository.Remove(profesor);
+
+            await _unitOfWork.CompleteAsync().ConfigureAwait(false);
+        }
+
+        public async Task AddAsignatura(int profesorId, ProfesorAsignaturaDto dto)
+        {
+            var profesor = await _unitOfWork.ProfesorRepository.
+                        GetByIdAsync(dto.ProfesorId).ConfigureAwait(false);
+
+            var asignatura = await _unitOfWork.AsignaturaRepository.
+                        GetByIdAsync(dto.AsignaturaId).ConfigureAwait(false);
+
+            if (asignatura.ProfesorId.HasValue && asignatura.ProfesorId != profesor.Id)
+            {
+                throw new DataException("La asignatura ya ha sido asignada a otro profesor");
+            }
+
+            asignatura.ConProfesor(profesor);
+
+            _unitOfWork.AsignaturaRepository.Update(asignatura);
 
             await _unitOfWork.CompleteAsync().ConfigureAwait(false);
         }

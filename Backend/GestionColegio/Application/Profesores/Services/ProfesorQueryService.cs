@@ -19,7 +19,7 @@ namespace GestionColegio.Application.Profesores.Services
 
         public async Task<IEnumerable<ProfesorDto>> GetAll()
         {
-            var profesores = await _unitOfWork.ProfesorRepository.GetAllAsync().ConfigureAwait(false);
+            var profesores = await _unitOfWork.ProfesorRepository.GetAllAsync(x => x.Asignaturas).ConfigureAwait(false);
 
             return _mapper.Map<IEnumerable<ProfesorDto>>(profesores);
         }

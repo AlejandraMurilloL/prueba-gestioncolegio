@@ -16,6 +16,10 @@ namespace GestionColegio.Persistence.EntityFramework.Mappings
             builder.HasKey(o => o.Id);
 
             builder.Property(o => o.Id).ValueGeneratedOnAdd().HasColumnName("Id");
+
+            builder.HasOne(p => p.Profesor)
+                .WithMany(b => b.Asignaturas)
+                .HasForeignKey(p => p.ProfesorId);
         }
     }
 }

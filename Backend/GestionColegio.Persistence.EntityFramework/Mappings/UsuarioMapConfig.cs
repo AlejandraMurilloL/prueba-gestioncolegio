@@ -8,9 +8,8 @@ namespace GestionColegio.Persistence.EntityFramework.Mappings
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.ToTable("Usuarios");
-
-            builder.HasKey(o => o.Id);
+            builder.ToTable("Usuarios")
+                .HasKey(o => o.Id);
 
             builder.Property(o => o.Id).ValueGeneratedOnAdd().HasColumnName("Id");
         }
