@@ -21,5 +21,12 @@ namespace GestionColegio.WebApi.Controllers
         {
             return await QueryService.GetAll();
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<AsignaturaDto> GetPAsignatura(int id)
+        {
+            return await QueryService.GetById(id);
+        }
     }
 }
